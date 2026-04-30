@@ -1,0 +1,26 @@
+# Raw client/project documents
+CM PJT_*/
+*.pdf
+*.pptx
+*.docx
+*.xlsx
+
+# Extracted text and internal analysis derived from real proposal projects
+ai_automation_package/analysis_extracts/
+ai_automation_package/analysis_reports/
+ai_automation_package/reference/
+
+# Local dependencies and generated package files
+node_modules/
+ai_automation_package/tools/pdf_node/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
