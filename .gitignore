@@ -5,6 +5,11 @@ CM PJT_*/
 *.docx
 *.xlsx
 
+# Local-only operational drafts
+ai_automation_package/gpt_instructions/*_v3.md
+ai_automation_package/project_templates/*_v3.md
+ai_automation_package/guides/project_gpt_analysis_operator_guide.md
+
 # Extracted text and internal analysis derived from real proposal projects
 ai_automation_package/analysis_extracts/
 ai_automation_package/analysis_reports/
@@ -23,4 +28,3 @@ Thumbs.db
 desktop.ini
 .vscode/
 .idea/
-
