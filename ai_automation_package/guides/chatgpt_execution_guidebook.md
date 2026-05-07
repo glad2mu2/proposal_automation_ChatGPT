@@ -1,7 +1,7 @@
 # 삼우씨엠 전략사업그룹 ChatGPT 실행 가이드북
 
-작성 기준일: 2026-04-30  
-적용 대상: CM 용역 기술제안서 업무 자동화  
+작성 기준일: 2026-04-30
+적용 대상: CM 용역 기술제안서 업무 자동화
 대상 사용자: ChatGPT를 처음 사용하는 전략사업그룹 팀원, PM, 부서 관리자
 
 ---
@@ -16,8 +16,8 @@
 Codex 또는 Claude Code = PM/관리자용 보조 자동화 도구
 ```
 
-즉, 매번 새 프로젝트가 생길 때마다 GPT를 새로 만드는 것이 아닙니다.  
-부서 공용 GPT 3개는 한 번 만들어 계속 사용하고, 실제 RFP와 제안서 파일은 프로젝트별 ChatGPT Project에 올려서 운영합니다.
+즉, 매번 새 프로젝트가 생길 때마다 GPT를 새로 만드는 것이 아닙니다.
+부서 공용 GPT 3개는 한 번 만들어 계속 사용하고, 실제 RFP와 제안서 파일은 프로젝트별 ChatGPT Project에 올려서 운영합니다. 다만 실제 분석을 시킬 때는 해당 채팅에 필요한 파일을 직접 다시 첨부하는 방식을 기본으로 합니다.
 
 부서 공용 GPT 3개:
 
@@ -38,6 +38,8 @@ Codex 또는 Claude Code = PM/관리자용 보조 자동화 도구
 ```text
 GPT는 부서 공통 전문가이고,
 Project는 해당 프로젝트의 자료와 대화가 쌓이는 실제 작업 공간이다.
+Project 소스는 보관함이고,
+실제 분석은 채팅에 직접 첨부한 파일을 우선 기준으로 한다.
 ```
 
 ---
@@ -58,7 +60,7 @@ GPT는 특정 업무를 잘하도록 미리 설정한 ChatGPT입니다.
 - RFP 과업내용을 제안서 개선전략으로 바꿀 것
 - 불확실한 내용은 추정하지 말고 `확인 필요`로 표시할 것
 
-GPT에는 `Instructions`, `Conversation starters`, `Knowledge`, `Capabilities`를 설정할 수 있습니다. OpenAI 공식 도움말에서도 GPT는 특정 목적에 맞게 구성된 ChatGPT이며, 지침, 대화 시작 예시, 지식 파일, 기능 등을 포함할 수 있다고 설명합니다.  
+GPT에는 `Instructions`, `Conversation starters`, `Knowledge`, `Capabilities`를 설정할 수 있습니다. OpenAI 공식 도움말에서도 GPT는 특정 목적에 맞게 구성된 ChatGPT이며, 지침, 대화 시작 예시, 지식 파일, 기능 등을 포함할 수 있다고 설명합니다.
 참고: [GPTs in ChatGPT](https://help.openai.com/en/articles/8554407)
 
 ### 2.2 Project란?
@@ -79,7 +81,7 @@ Project 안에는 다음이 들어갑니다.
 - AI와 나눈 대화
 - 프로젝트별 지침
 
-OpenAI 공식 도움말 기준으로 Project는 장기 작업을 한 곳에 모아두는 작업공간이며, 파일, 지침, 채팅을 함께 보관해 ChatGPT가 해당 업무 맥락을 유지하도록 돕습니다.  
+OpenAI 공식 도움말 기준으로 Project는 장기 작업을 한 곳에 모아두는 작업공간이며, 파일, 지침, 채팅을 함께 보관해 ChatGPT가 해당 업무 맥락을 유지하도록 돕습니다.
 참고: [Projects in ChatGPT](https://help.openai.com/en/articles/10169521)
 
 ### 2.3 GPT와 Project의 관계
@@ -126,7 +128,7 @@ flowchart TD
     D --> J
     E --> J
 
-    J --> K["RFP 분석표"]
+    J --> K["RFP 제안전략설계서"]
     J --> L["제안서 Review 리포트"]
     J --> M["발표 예상 Q&A"]
     K --> N["팀 검토 및 제안서 반영"]
@@ -160,7 +162,7 @@ flowchart TD
 - Business 데이터는 기본적으로 모델 학습에 사용되지 않음
 - 각 사용자의 개인 채팅은 자동으로 다른 팀원에게 공개되지 않음
 
-OpenAI 공식 도움말에 따르면 ChatGPT Business 워크스페이스 데이터는 기본적으로 학습에 사용되지 않고, 사용자별 채팅 기록은 자동으로 다른 구성원에게 보이지 않습니다.  
+OpenAI 공식 도움말에 따르면 ChatGPT Business 워크스페이스 데이터는 기본적으로 학습에 사용되지 않고, 사용자별 채팅 기록은 자동으로 다른 구성원에게 보이지 않습니다.
 참고: [Managing data, sharing, and privacy in ChatGPT Business](https://help.openai.com/en/articles/8798634)
 
 ### 4.2 계정과 권한
@@ -188,7 +190,7 @@ OpenAI 공식 도움말에 따르면 ChatGPT Business 워크스페이스 데이�
 
 ## 5. 부서 공용 GPT 3개 만들기
 
-부서 공용 GPT는 한 번 만들어 두고 계속 씁니다.  
+부서 공용 GPT는 한 번 만들어 두고 계속 씁니다.
 프로젝트가 100건 이상 진행되어도 GPT를 매번 새로 만들 필요는 없습니다.
 
 ### 5.1 GPT 만들기 공통 절차
@@ -196,12 +198,12 @@ OpenAI 공식 도움말에 따르면 ChatGPT Business 워크스페이스 데이�
 1. ChatGPT에 로그인합니다.
 2. 왼쪽 메뉴 또는 GPTs 화면에서 `Create` 또는 `만들기`를 선택합니다.
 3. `Configure` 화면에서 이름, 설명, 지침, 대화 시작 문구를 입력합니다.
-4. `Instructions`에는 이 패키지의 v2 지침 파일 내용을 붙여 넣습니다.
+4. `Instructions`에는 이 패키지의 v3 지침 파일 내용을 붙여 넣습니다.
 5. `Knowledge`에는 부서 공통 자료만 올립니다.
 6. Preview에서 테스트합니다.
 7. 저장 후 부서 워크스페이스에 공유합니다.
 
-GPT 생성과 편집은 유료 구독 또는 워크스페이스 권한이 필요할 수 있습니다. 공식 도움말에 따르면 GPT는 ChatGPT 안에서 만들고, 테스트한 뒤 저장할 수 있습니다.  
+GPT 생성과 편집은 유료 구독 또는 워크스페이스 권한이 필요할 수 있습니다. 공식 도움말에 따르면 GPT는 ChatGPT 안에서 만들고, 테스트한 뒤 저장할 수 있습니다.
 참고: [GPTs in ChatGPT](https://help.openai.com/en/articles/8554407)
 
 ### 5.2 GPT에 올릴 자료와 올리지 않을 자료
@@ -211,7 +213,7 @@ GPT의 `Knowledge`에는 부서 공통 자료만 넣습니다.
 넣어도 되는 자료:
 
 - 기술제안서 작성 절차서 매뉴얼
-- 표준 RFP 분석표 양식
+- 표준 RFP 제안전략설계 체크리스트
 - 표준 제안서 Review 리포트 양식
 - 표준 발표 Q&A 양식
 - 부서 공통 운영 지침
@@ -230,7 +232,7 @@ GPT의 `Knowledge`에는 부서 공통 자료만 넣습니다.
 설정 파일:
 
 ```text
-ai_automation_package/gpt_instructions/rfp_analysis_gpt_v2.md
+ai_automation_package/gpt_instructions/rfp_analysis_gpt_v3.md
 ```
 
 권장 이름:
@@ -242,7 +244,7 @@ ai_automation_package/gpt_instructions/rfp_analysis_gpt_v2.md
 설명:
 
 ```text
-CM 용역 RFP, 과업지시서, 평가기준을 분석해 필수조건, 감점요소, 평가배점 대응 Matrix, 과업내용-개선사항 매핑표를 작성하는 부서 공용 GPT입니다.
+CM 용역 RFP, 과업지시서, 평가기준을 분석해 필수조건, 감점요소, 평가배점 대응 Matrix, Hidden Needs, Win Theme, 과업내용-개선전략 매핑표를 작성하는 부서 공용 GPT입니다.
 ```
 
 Conversation starters:
@@ -264,7 +266,7 @@ RFP 과업내용을 제안서에 들어갈 개선전략으로 변환해줘.
 - 자료 품질/OCR 점검표
 - RFP 필수조건/감점요소 표
 - 평가배점 대응 Matrix
-- RFP 과업내용-개선사항 매핑표
+- RFP 과업내용-개선전략 매핑표
 - 4대 특성 분석
 - 기술지원 요청 Item 초안
 
@@ -273,7 +275,7 @@ RFP 과업내용을 제안서에 들어갈 개선전략으로 변환해줘.
 설정 파일:
 
 ```text
-ai_automation_package/gpt_instructions/proposal_review_gpt_v2.md
+ai_automation_package/gpt_instructions/proposal_review_gpt_v3.md
 ```
 
 권장 이름:
@@ -316,7 +318,7 @@ RFP 필수조건과 과업내용 중 제안서에 빠진 항목을 찾아줘.
 설정 파일:
 
 ```text
-ai_automation_package/gpt_instructions/presentation_qa_gpt_v2.md
+ai_automation_package/gpt_instructions/presentation_qa_gpt_v3.md
 ```
 
 권장 이름:
@@ -371,7 +373,7 @@ GPT를 만든 뒤에는 부서원에게 공유합니다.
 - PM이 결과물을 함께 봐야 한다면 반드시 Project 안에서 작업하게 해야 합니다.
 - Project 밖에서 각자 GPT를 쓰면 결과물이 개인 채팅에 흩어집니다.
 
-OpenAI 공식 도움말에서도 GPT 제작자는 사용자가 해당 GPT와 나눈 개별 대화를 볼 수 없다고 안내합니다.  
+OpenAI 공식 도움말에서도 GPT 제작자는 사용자가 해당 GPT와 나눈 개별 대화를 볼 수 없다고 안내합니다.
 참고: [GPTs in ChatGPT](https://help.openai.com/en/articles/8554407)
 
 ---
@@ -413,7 +415,7 @@ Project를 만든 뒤 `Project settings`에서 지침을 입력합니다.
 사용할 파일:
 
 ```text
-ai_automation_package/project_templates/chatgpt_project_template_v2.md
+ai_automation_package/project_templates/chatgpt_project_template_v3.md
 ```
 
 Project 지침에는 다음 내용이 반드시 들어가야 합니다.
@@ -444,13 +446,13 @@ Project 지침에는 다음 내용이 반드시 들어가야 합니다.
 
 | 단계 | 파일 |
 |---|---|
-| KOM 전 | RFP 분석표, KOM 회의록 |
+| KOM 전 | RFP 제안전략설계서, KOM 회의록 |
 | 초안 작성 후 | 제안서 초안 PDF 또는 PPT |
 | Review 후 | 수정 제안서, Review 반영표 |
 | 발표 준비 | 발표자료, 발표 스크립트 |
 | 종료 후 | 실제 심사 질문, Lessons Learned |
 
-Project 파일 업로드 한도는 플랜에 따라 다릅니다. 공식 도움말 기준으로 Business, Enterprise, Edu, Pro는 Project당 40개 파일을 지원하며, 한 번에 업로드할 수 있는 파일은 10개입니다.  
+Project 파일 업로드 한도는 플랜에 따라 다릅니다. 공식 도움말 기준으로 Business, Enterprise, Edu, Pro는 Project당 40개 파일을 지원하며, 한 번에 업로드할 수 있는 파일은 10개입니다.
 참고: [Projects in ChatGPT - Plans and limits](https://help.openai.com/en/articles/10169521)
 
 ### 6.5 파일 이름 규칙
@@ -493,7 +495,7 @@ Project를 공유할 때 권한을 나눕니다.
 | 발표자 | Chat | Q&A 생성과 리허설 가능 |
 | 참조자 | Chat | 자료 확인 중심 |
 
-공식 도움말 기준으로 Project는 공유 시 `Edit`와 `Chat` 권한을 줄 수 있습니다. Edit 권한은 지침/파일 수정이 가능하고, Chat 권한은 프로젝트의 채팅, 파일, 지침을 보고 대화할 수 있습니다.  
+공식 도움말 기준으로 Project는 공유 시 `Edit`와 `Chat` 권한을 줄 수 있습니다. Edit 권한은 지침/파일 수정이 가능하고, Chat 권한은 프로젝트의 채팅, 파일, 지침을 보고 대화할 수 있습니다.
 참고: [Projects in ChatGPT - Share a Project](https://help.openai.com/en/articles/10169521)
 
 ---
@@ -502,7 +504,7 @@ Project를 공유할 때 권한을 나눕니다.
 
 ### 7.1 가장 중요한 규칙
 
-반드시 Project 안에서 먼저 새 채팅을 만듭니다.  
+반드시 Project 안에서 먼저 새 채팅을 만듭니다.
 그 다음 필요한 GPT를 호출합니다.
 
 권장 순서:
@@ -558,7 +560,7 @@ Chat: 01_RFP_필수조건_감점요소
 UI나 권한에 따라 Custom GPT 호출 방식이 다르게 보일 수 있습니다. 그럴 때는 다음 중 하나로 처리합니다.
 
 1. Project 채팅 안에서 `@`를 입력해 GPT 이름을 검색합니다.
-2. GPT 호출이 안 되면 Project 채팅에 v2 지침의 핵심 프롬프트를 직접 붙여 넣습니다.
+2. GPT 호출이 안 되면 Project 채팅에 v3 지침의 핵심 프롬프트를 직접 붙여 넣습니다.
 3. GPT에서 받은 결과를 Project로 옮겨야 할 경우, 해당 채팅을 Project로 이동하거나 결과물을 Project 채팅에 붙여 넣습니다.
 
 단, 새 프로젝트 운영에서는 처음부터 Project 안에서 작업하는 것을 기본으로 합니다.
@@ -573,15 +575,16 @@ UI나 권한에 따라 Custom GPT 호출 방식이 다르게 보일 수 있습�
 00_자료품질_OCR_확인
 01_RFP_필수조건_감점요소
 02_평가배점_대응전략
-03_RFP과업_개선사항_매핑
-04_4대특성_KOM_요약
-05_기술지원_요청서
-06_제안서_1차_Review
-07_제안서_2차_Review
-08_발표_QA_키워드
-09_리허설_압박질문
-10_최종체크_PRM
-11_사후평가_Lessons_Learned
+03_HiddenNeeds_WinTheme
+04_RFP과업_개선전략_매핑
+05_4대특성_KOM_요약
+06_기술지원_요청서
+07_제안서_1차_Review
+08_제안서_2차_Review
+09_발표_QA_키워드
+10_리허설_압박질문
+11_최종체크_PRM
+12_사후평가_Lessons_Learned
 ```
 
 각 항목은 Project 안에서 별도 채팅으로 만듭니다.
@@ -695,7 +698,40 @@ UI나 권한에 따라 Custom GPT 호출 방식이 다르게 보일 수 있습�
 - 배점 높은 항목이 제안서 핵심 Item으로 전환됨
 - 기술지원 요청 Item이 도출됨
 
-### 8.5 03_RFP과업_개선사항_매핑
+### 8.5 03_HiddenNeeds_WinTheme
+
+목적:
+
+- 평가표에 직접 드러나지 않는 발주자 불안과 수주 메시지를 도출
+
+사용 GPT:
+
+```text
+삼우CM RFP 분석 GPT
+```
+
+프롬프트:
+
+```text
+RFP, 과업지시서, 평가기준을 기준으로 Hidden Needs와 Must-win Win Theme를 작성해줘.
+
+Hidden Need별로 아래 항목을 포함해줘.
+1. Hidden Need
+2. 추론 근거
+3. 발주자 불안 또는 두려움
+4. 평가위원이 찾는 메시지
+5. 제안 대응 메시지
+6. 제안서 반영 위치
+
+Win Theme는 3~5개로 정리하고, 대응 평가항목과 발주자 입장에서의 가치를 함께 써줘.
+```
+
+완료 기준:
+
+- RFP 근거와 발주자 의도가 Hidden Need로 연결됨
+- 제안서에서 반복할 핵심 메시지가 Win Theme로 정리됨
+
+### 8.6 04_RFP과업_개선전략_매핑
 
 목적:
 
@@ -710,7 +746,7 @@ UI나 권한에 따라 Custom GPT 호출 방식이 다르게 보일 수 있습�
 프롬프트:
 
 ```text
-RFP와 과업지시서의 주요 과업내용을 제안서에 들어갈 개선사항으로 변환해줘.
+RFP와 과업지시서의 주요 과업내용을 제안서에 들어갈 개선전략으로 변환해줘.
 
 아래 표로 작성해줘.
 1. RFP 과업내용
@@ -728,9 +764,9 @@ RFP와 과업지시서의 주요 과업내용을 제안서에 들어갈 개선�
 완료 기준:
 
 - RFP 과업이 제안서 문장과 도식으로 바뀔 수 있음
-- 일반론을 줄일 수 있는 개선 포인트가 생김
+- 일반론을 줄일 수 있는 개선전략 포인트가 생김
 
-### 8.6 04_4대특성_KOM_요약
+### 8.7 05_4대특성_KOM_요약
 
 목적:
 
@@ -769,7 +805,7 @@ KOM 회의에서 바로 사용할 수 있도록 1페이지 요약 형태로 정�
 - KOM에서 논의할 핵심 Item이 정리됨
 - 기술지원 요청 방향이 명확해짐
 
-### 8.7 05_기술지원_요청서
+### 8.8 06_기술지원_요청서
 
 목적:
 
@@ -805,7 +841,7 @@ RFP 분석 결과와 평가배점 대응 Matrix를 기준으로 기술지원 요
 - 기술지원 요청이 추상적이지 않음
 - RFP/평가기준과 연결됨
 
-### 8.8 06_제안서_1차_Review
+### 8.9 07_제안서_1차_Review
 
 목적:
 
@@ -840,7 +876,7 @@ P0는 제출 전 반드시 수정해야 하는 항목으로 표시해줘.
 - 감점 또는 누락 위험이 확인됨
 - 수정 우선순위가 정리됨
 
-### 8.9 07_제안서_2차_Review
+### 8.10 08_제안서_2차_Review
 
 목적:
 
@@ -875,7 +911,7 @@ P0는 제출 전 반드시 수정해야 하는 항목으로 표시해줘.
 - 최종 제출 전 남은 약점 확인
 - 발표 Q&A 생성에 넘길 쟁점 정리
 
-### 8.10 08_발표_QA_키워드
+### 8.11 09_발표_QA_키워드
 
 목적:
 
@@ -911,7 +947,7 @@ P0는 제출 전 반드시 수정해야 하는 항목으로 표시해줘.
 - 발표자가 외울 키워드가 정리됨
 - 평가위원 관점의 질문이 준비됨
 
-### 8.11 09_리허설_압박질문
+### 8.12 10_리허설_압박질문
 
 목적:
 
@@ -943,7 +979,7 @@ P0는 제출 전 반드시 수정해야 하는 항목으로 표시해줘.
 - 발표자가 약점 방어 연습 가능
 - 답변 키워드가 60초 답변 구조로 정리됨
 
-### 8.12 10_최종체크_PRM
+### 8.13 11_최종체크_PRM
 
 목적:
 
@@ -978,7 +1014,7 @@ P0는 제출 전 반드시 수정해야 하는 항목으로 표시해줘.
 - 제출 전 사람이 확인해야 할 리스트 확보
 - AI가 확정할 수 없는 항목 구분
 
-### 8.13 11_사후평가_Lessons_Learned
+### 8.14 12_사후평가_Lessons_Learned
 
 목적:
 
@@ -1017,7 +1053,7 @@ P0는 제출 전 반드시 수정해야 하는 항목으로 표시해줘.
 
 ### 9.1 결과물은 자동으로 문서 파일이 되지 않는다
 
-ChatGPT가 답변을 생성하면 우선 채팅에 남습니다.  
+ChatGPT가 답변을 생성하면 우선 채팅에 남습니다.
 그 결과가 자동으로 엑셀, 워드, PDF 파일로 저장되는 것은 아닙니다.
 
 따라서 PM은 중요한 결과물을 다음 중 하나로 관리해야 합니다.
@@ -1032,9 +1068,9 @@ ChatGPT가 답변을 생성하면 우선 채팅에 남습니다.
 Project 안에서는 산출물 이름을 고정합니다.
 
 ```text
-RFP 분석표
+RFP 제안전략설계서
 평가배점 대응 Matrix
-RFP 과업내용-개선사항 매핑표
+RFP 과업내용-개선전략 매핑표
 KOM 요약자료
 기술지원 요청서
 제안서 Review 리포트
@@ -1071,15 +1107,16 @@ PM 검토
 00_자료품질_OCR_확인
 01_RFP_필수조건_감점요소
 02_평가배점_대응전략
-03_RFP과업_개선사항_매핑
-04_4대특성_KOM_요약
-05_기술지원_요청서
-06_제안서_1차_Review
-07_제안서_2차_Review
-08_발표_QA_키워드
-09_리허설_압박질문
-10_최종체크_PRM
-11_사후평가_Lessons_Learned
+03_HiddenNeeds_WinTheme
+04_RFP과업_개선전략_매핑
+05_4대특성_KOM_요약
+06_기술지원_요청서
+07_제안서_1차_Review
+08_제안서_2차_Review
+09_발표_QA_키워드
+10_리허설_압박질문
+11_최종체크_PRM
+12_사후평가_Lessons_Learned
 ```
 
 ### 10.2 누가 채팅을 시작하나?
@@ -1175,10 +1212,10 @@ Codex나 Claude Code는 전 직원용 기본 도구로 두기보다 PM/관리자
 파일럿이 끝나면 다음 파일을 업데이트합니다.
 
 ```text
-gpt_instructions/rfp_analysis_gpt_v2.md
-gpt_instructions/proposal_review_gpt_v2.md
-gpt_instructions/presentation_qa_gpt_v2.md
-project_templates/chatgpt_project_template_v2.md
+gpt_instructions/rfp_analysis_gpt_v3.md
+gpt_instructions/proposal_review_gpt_v3.md
+gpt_instructions/presentation_qa_gpt_v3.md
+project_templates/chatgpt_project_template_v3.md
 ```
 
 ---
@@ -1187,19 +1224,19 @@ project_templates/chatgpt_project_template_v2.md
 
 ### Q1. GPT와 Project가 자동으로 연동되나요?
 
-완전히 하나로 합쳐진 기능은 아닙니다.  
+완전히 하나로 합쳐진 기능은 아닙니다.
 GPT와 Project는 서로 다른 기능입니다.
 
 다만 기존 Project 채팅 안에서 Custom GPT를 사용할 수 있습니다. 따라서 실무에서는 Project를 먼저 열고, 그 안에서 GPT를 호출하는 방식으로 운영합니다.
 
 ### Q2. GPT를 먼저 열고 작업한 뒤 Project로 옮기면 안 되나요?
 
-가능은 하지만 추천하지 않습니다.  
+가능은 하지만 추천하지 않습니다.
 처음부터 Project 안에서 작업해야 프로젝트 파일, 지침, 채팅 이력이 한 곳에 남습니다.
 
 ### Q3. 팀원이 GPT를 쓰면 PM이 그 대화를 볼 수 있나요?
 
-Project 밖에서 개인적으로 GPT를 쓰면 PM은 볼 수 없습니다.  
+Project 밖에서 개인적으로 GPT를 쓰면 PM은 볼 수 없습니다.
 GPT 제작자도 사용자별 개별 대화를 자동으로 볼 수 없습니다.
 
 PM이 결과를 봐야 하는 업무는 반드시 공유 Project 안에서 진행해야 합니다.
@@ -1212,12 +1249,12 @@ PM이 결과를 봐야 하는 업무는 반드시 공유 Project 안에서 진�
 
 ### Q5. Project마다 GPT를 새로 만들어야 하나요?
 
-아닙니다.  
+아닙니다.
 GPT는 부서 공용 3개를 계속 쓰고, Project만 프로젝트별로 새로 만듭니다.
 
 ### Q6. 제안서 초안을 GPT Knowledge에 올리면 되나요?
 
-권장하지 않습니다.  
+권장하지 않습니다.
 제안서 초안은 해당 프로젝트에만 필요한 자료이므로 Project에 올립니다.
 
 GPT Knowledge에는 부서 공통 지식만 넣습니다.
@@ -1238,19 +1275,19 @@ GPT Knowledge에는 부서 공통 지식만 넣습니다.
 
 ### Q8. AI가 작성한 표를 Excel로 받을 수 있나요?
 
-ChatGPT에서 표를 만든 뒤 복사해 Excel에 붙여 넣을 수 있습니다.  
+ChatGPT에서 표를 만든 뒤 복사해 Excel에 붙여 넣을 수 있습니다.
 반복적으로 Excel 변환이 필요하면 Codex 보조 도구로 Markdown 또는 CSV 변환 스크립트를 만들 수 있습니다.
 
 ### Q9. AI가 RFP를 잘못 읽으면 어떻게 하나요?
 
-먼저 `00_자료품질_OCR_확인`을 합니다.  
+먼저 `00_자료품질_OCR_확인`을 합니다.
 스캔 PDF나 표 추출이 불완전한 경우 OCR 처리본 또는 원문 파일을 다시 업로드해야 합니다.
 
 AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 
 ### Q10. 동시에 여러 명이 같은 채팅을 편집할 수 있나요?
 
-공동 문서처럼 실시간 동시 편집하는 방식은 아닙니다.  
+공동 문서처럼 실시간 동시 편집하는 방식은 아닙니다.
 공식 도움말 기준으로 공유 Project의 채팅은 branch 방식으로 이어갈 수 있습니다.
 
 권장 방식:
@@ -1291,7 +1328,7 @@ AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 
 ### 작성자 체크리스트
 
-- [ ] RFP 분석표 확인
+- [ ] RFP 제안전략설계서 확인
 - [ ] 평가배점 대응 Matrix 확인
 - [ ] 기술지원 요청 Item 반영
 - [ ] 제안서 초안 업로드
@@ -1339,16 +1376,16 @@ AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 GPT 지침:
 
 ```text
-ai_automation_package/gpt_instructions/rfp_analysis_gpt_v2.md
-ai_automation_package/gpt_instructions/proposal_review_gpt_v2.md
-ai_automation_package/gpt_instructions/presentation_qa_gpt_v2.md
+ai_automation_package/gpt_instructions/rfp_analysis_gpt_v3.md
+ai_automation_package/gpt_instructions/proposal_review_gpt_v3.md
+ai_automation_package/gpt_instructions/presentation_qa_gpt_v3.md
 ```
 
 Project 템플릿:
 
 ```text
-ai_automation_package/project_templates/chatgpt_project_template_v2.md
-ai_automation_package/project_templates/gpt_builder_setup_guide_v2.md
+ai_automation_package/project_templates/chatgpt_project_template_v3.md
+ai_automation_package/project_templates/gpt_builder_setup_guide_v3.md
 ```
 
 분석 보고서:

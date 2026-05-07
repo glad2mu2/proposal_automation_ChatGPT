@@ -4,7 +4,7 @@
 
 이 저장소는 다음 업무를 대상으로 합니다.
 
-- RFP 분석
+- RFP 제안전략설계
 - 제안서 초안 Review
 - 발표 예상 질의응답 생성
 - ChatGPT GPT/Project 운영 표준화
@@ -12,22 +12,28 @@
 
 ## 주요 문서
 
-- `ai_automation_package/guides/chatgpt_execution_guidebook.md`  
+- `ai_automation_package/guides/chatgpt_execution_guidebook.md`
   ChatGPT를 처음 쓰는 팀원을 위한 GPT 생성, Project 생성, 운영 가이드북입니다.
 
-- `ai_automation_package/gpt_instructions/rfp_analysis_gpt_v2.md`  
-  RFP 분석 GPT 설정 지침입니다.
+- `ai_automation_package/guides/project_gpt_analysis_operator_guide.md`
+  용역별 Project에서 담당자가 GPT를 호출하고, 필요한 파일을 채팅에 직접 첨부해 통합 분석 결과물을 받는 실무 운영 가이드입니다.
 
-- `ai_automation_package/gpt_instructions/proposal_review_gpt_v2.md`  
+- `ai_automation_package/guides/용역별_Project_GPT_분석_운영_가이드.docx`
+  위 실무 운영 가이드를 Word 문서로 변환한 배포용 파일입니다.
+
+- `ai_automation_package/gpt_instructions/rfp_analysis_gpt_v3.md`
+  RFP 제안전략설계 GPT 설정 지침입니다.
+
+- `ai_automation_package/gpt_instructions/proposal_review_gpt_v3.md`
   제안서 초안 Review GPT 설정 지침입니다.
 
-- `ai_automation_package/gpt_instructions/presentation_qa_gpt_v2.md`  
+- `ai_automation_package/gpt_instructions/presentation_qa_gpt_v3.md`
   발표 Q&A GPT 설정 지침입니다.
 
-- `ai_automation_package/project_templates/chatgpt_project_template_v2.md`  
+- `ai_automation_package/project_templates/chatgpt_project_template_v3.md`
   프로젝트별 ChatGPT Project 지침 템플릿입니다.
 
-- `ai_automation_package/project_templates/gpt_builder_setup_guide_v2.md`  
+- `ai_automation_package/project_templates/gpt_builder_setup_guide_v3.md`
   GPT Builder 설정 가이드입니다.
 
 ## 권장 운영 방식
@@ -43,4 +49,3 @@ Codex 또는 Claude Code = PM/관리자용 보조 자동화 도구
 이 GitHub 저장소에는 실제 RFP, 제안서, 발주처 자료, PDF 원본, 추출 텍스트, 내부 분석 보고서를 올리지 않습니다.
 
 실제 프로젝트 자료는 ChatGPT Business의 프로젝트별 Project 안에서만 관리하고, 공유 범위는 해당 프로젝트 참여자로 제한합니다.
-

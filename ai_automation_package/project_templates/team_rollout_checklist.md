@@ -14,9 +14,9 @@
 
 | GPT | 지침 파일 | Knowledge 업로드 | 공유 범위 |
 |---|---|---|---|
-| RFP 분석 GPT | `gpt_instructions/rfp_analysis_gpt.md` | 매뉴얼, RFP 분석표 양식 | 전략사업그룹 |
-| 제안서 초안 Review GPT | `gpt_instructions/proposal_review_gpt.md` | 매뉴얼, 리뷰 리포트 양식 | 전략사업그룹 |
-| 발표 Q&A GPT | `gpt_instructions/presentation_qa_gpt.md` | 매뉴얼, Q&A 양식 | 전략사업그룹 |
+| RFP 분석 GPT | `gpt_instructions/rfp_analysis_gpt_v3.md` | 매뉴얼, RFP 제안전략설계 체크리스트 | 전략사업그룹 |
+| 제안서 초안 Review GPT | `gpt_instructions/proposal_review_gpt_v3.md` | 매뉴얼, 리뷰 리포트 양식 | 전략사업그룹 |
+| 발표 Q&A GPT | `gpt_instructions/presentation_qa_gpt_v3.md` | 매뉴얼, Q&A 양식 | 전략사업그룹 |
 
 ## 3. 프로젝트 운영
 
@@ -41,4 +41,3 @@
 - 30분: RFP 분석 실습
 - 30분: 제안서 Review 실습
 - 30분: 발표 Q&A 생성 및 리허설 실습
-

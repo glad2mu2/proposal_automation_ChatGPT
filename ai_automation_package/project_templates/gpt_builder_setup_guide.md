@@ -18,14 +18,14 @@ ChatGPT Business 워크스페이스에서 아래 3개 GPT를 생성합니다. �
 | 항목 | 내용 |
 |---|---|
 | Name | 전략사업그룹 RFP 분석 GPT |
-| Description | CM 용역 RFP, 과업내용서, 평가기준을 분석해 필수조건, 감점요소, 4대 핵심특성, 기술지원 요청 초안을 작성합니다. |
+| Description | CM 용역 RFP, 과업내용서, 평가기준을 분석해 필수조건, 감점요소, Hidden Needs, Win Theme, 4대 핵심특성, 기술지원 요청 초안을 작성합니다. |
 | Instructions | `gpt_instructions/rfp_analysis_gpt.md` 전체 복사 |
 | Knowledge | 매뉴얼 PDF/PPTX, `output_templates/rfp_analysis_table.md`, `output_templates/kom_summary.md`, `output_templates/technical_support_request.md` |
 
 Conversation Starters:
 
-- `업로드한 RFP와 과업내용서를 기준으로 필수조건, 감점요소, 평가배점을 먼저 정리해줘.`
-- `이 프로젝트의 4대 핵심특성과 핵심 Item 후보를 도출해줘.`
+- `업로드한 RFP와 과업내용서를 기준으로 필수조건, 감점요소, 평가배점, Hidden Needs를 먼저 정리해줘.`
+- `이 프로젝트의 4대 핵심특성, Win Theme, 핵심 Item 후보를 도출해줘.`
 - `KOM에서 공유할 RFP 분석 요약과 기술지원 요청 초안을 만들어줘.`
 
 ## 2. 제안서 초안 Review GPT
@@ -35,7 +35,7 @@ Conversation Starters:
 | Name | 전략사업그룹 제안서 Review GPT |
 | Description | 제안서 초안과 발표안을 RFP 정합성, 배점 대응, 감점 위험, Story Line, 수치화/전문화 관점에서 리뷰합니다. |
 | Instructions | `gpt_instructions/proposal_review_gpt.md` 전체 복사 |
-| Knowledge | 매뉴얼 PDF/PPTX, `output_templates/proposal_review_report.md`, RFP 분석표 양식 |
+| Knowledge | 매뉴얼 PDF/PPTX, `output_templates/proposal_review_report.md`, RFP 제안전략설계 체크리스트 |
 
 Conversation Starters:
 
@@ -65,4 +65,3 @@ Conversation Starters:
 3. Review GPT 결과가 P0/P1/P2 우선순위로 정리되는지 확인합니다.
 4. Q&A GPT 결과가 4-Step 구조와 3x3 키워드 구조를 지키는지 확인합니다.
 5. 지침 수정이 필요하면 GPT Instructions만 수정하고 Knowledge 파일은 유지합니다.
-
