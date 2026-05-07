@@ -23,7 +23,7 @@ powershell -NoProfile -ExecutionPolicy Bypass -File ".\New-ProjectWorkspace.ps1"
 생성 폴더:
 
 - `00_RFP`
-- `01_RFP_Analysis`
+- `01_RFP_Strategy_Design`
 - `02_KOM`
 - `03_Technical_Support`
 - `04_Proposal_Drafts`

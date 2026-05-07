@@ -22,7 +22,7 @@
 - `project_templates/`
   - ChatGPT Project 생성 시 사용할 프로젝트 운영 지침과 업로드 체크리스트입니다.
 - `output_templates/`
-  - RFP 분석표, KOM 요약, 기술지원 요청서, 제안서 리뷰, Q&A, 파일럿 평가표 양식입니다.
+  - RFP 제안전략설계 체크리스트, KOM 요약, 기술지원 요청서, 제안서 리뷰, Q&A, 파일럿 평가표 양식입니다.
 - `tools/`
   - PM/관리자용 PowerShell 보조 스크립트와 사용 설명서입니다.
 
@@ -40,6 +40,7 @@
 - 숫자, 법규, 공법 성능, 비용 절감률, 공기 단축률은 출처가 없으면 확정 표현을 금지합니다.
 - 프로젝트별 채팅과 파일을 섞지 않습니다.
 - 대외비 자료는 Business/Team급 워크스페이스에서만 처리하는 것을 기본값으로 합니다.
+- RFP 분석 산출물은 `rfp_strategy_design_report.docx`를 기본으로 하며, Hidden Needs와 Win Theme가 제안서 목차/페이지 구성까지 연결되어야 합니다.
 - 산출물은 매뉴얼의 핵심 방향인 구체화, 전문화, 수치화, 차별화를 기준으로 평가합니다.
 
 ## 참고 링크
@@ -49,4 +50,3 @@
 - [ChatGPT Business privacy](https://help.openai.com/en/articles/8798634-shared-links-faq-chatgpt-team-version%252525253F.zst)
 - [Claude Team](https://support.anthropic.com/en/articles/9266767-what-is-the-claude-team-plan)
 - [Claude Projects](https://support.anthropic.com/en/articles/9517075-what-are-projects)
-

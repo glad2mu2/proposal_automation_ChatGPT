@@ -27,7 +27,7 @@ if ((Test-Path -LiteralPath $projectPath) -and -not $Force) {
 
 $folders = @(
     "00_RFP",
-    "01_RFP_Analysis",
+    "01_RFP_Strategy_Design",
     "02_KOM",
     "03_Technical_Support",
     "04_Proposal_Drafts",
@@ -60,7 +60,7 @@ $readme = @"
 | 폴더 | 용도 |
 |---|---|
 | 00_RFP | 공고문, RFP, 과업내용서, 평가기준 |
-| 01_RFP_Analysis | RFP 분석표, 4대 핵심특성 |
+| 01_RFP_Strategy_Design | RFP 제안전략설계서, Hidden Needs, Win Theme, 4대 핵심특성 |
 | 02_KOM | KOM 요약자료, 회의록 |
 | 03_Technical_Support | 기술지원 요청서, 분야별 회신 |
 | 04_Proposal_Drafts | 제안서 초안, 발표안 |
@@ -75,4 +75,3 @@ $readme = @"
 Set-Content -LiteralPath (Join-Path -Path $projectPath -ChildPath "README.md") -Value $readme -Encoding UTF8
 
 Write-Host "Created project workspace: $projectPath"
-
