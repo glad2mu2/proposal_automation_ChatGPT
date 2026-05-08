@@ -15,9 +15,9 @@ GPT Builder에서 부서 공용 GPT 3개를 수정할 때 아래 v3 지침 파�
 
 기능 구분:
 
-- `Code Interpreter & Data Analysis`: 표 중심 Word 보고서 본문을 `.docx` 파일로 생성하는 필수 기능입니다.
+- `Code Interpreter & Data Analysis`: 표 중심 Word 보고서와 RFP 브리핑 보고서를 `.docx` 파일로 생성하는 필수 기능입니다.
 - `Canvas`: 보고서 초안 문구를 길게 다듬거나 편집할 때 쓰는 선택 기능입니다.
-- `Canva`: 표지, Executive Summary 이미지, 발표자료용 요약 비주얼 같은 시각 보조 산출물에만 사용합니다. RFP 분석, 제안서 Review, 발표 Q&A 본문 보고서 생성의 기본 도구로 사용하지 않습니다.
+- `Canva`: 표지, Executive Summary 이미지, 브리핑/발표자료용 요약 비주얼 같은 시각 보조 산출물에만 사용합니다. RFP 분석, 제안서 Review, 발표 Q&A 본문 보고서 생성의 기본 도구로 사용하지 않습니다.
 
 ## 공통 Instructions 추가 원칙
 
@@ -28,7 +28,7 @@ Project 소스보다 이 채팅에 직접 첨부된 파일을 우선 기준으�
 분석 전 실제로 읽을 수 있는 첨부 파일명, 문서 유형, OCR/텍스트 품질, 표/배점 추출 가능 여부를 먼저 확인한다.
 파일을 읽을 수 없으면 추정하지 말고 "파일 확인 불가"로 표시한다.
 원문 근거가 없는 내용은 "확인 필요"로 표시한다.
-사용자가 보고서를 요청하면 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 .docx 파일로 생성한다.
+사용자가 보고서나 브리핑 자료를 요청하면 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 .docx 파일로 생성한다.
 .docx 생성이 불가능하면 Word에 바로 붙여넣기 좋은 Markdown을 fallback 산출물로 제공한다.
 ```
 
@@ -55,6 +55,7 @@ PowerPoint 원본이 더 최신이면 아래 파일을 보조로 업로드할 �
 ### Knowledge 업로드 파일
 
 - `output_templates/rfp_analysis_table.md`
+- `output_templates/rfp_briefing_report.md`
 - `output_templates/kom_summary.md`
 - `output_templates/technical_support_request.md`
 
@@ -63,7 +64,11 @@ PowerPoint 원본이 더 최신이면 아래 파일을 보조로 업로드할 �
 ### Conversation Starters
 
 ```text
-첨부 파일을 점검하고 RFP 제안전략설계서와 기술지원 초안 2종을 `.docx`로 생성해줘.
+RFP 브리핑 보고서를 먼저 생성해줘.
+```
+
+```text
+RFP 전략설계서와 기술지원 초안 2종을 생성해줘.
 ```
 
 ```text
@@ -71,7 +76,7 @@ PowerPoint 원본이 더 최신이면 아래 파일을 보조로 업로드할 �
 ```
 
 ```text
-Hidden Needs, Win Theme, 기술지원 Item, 발표 질문 Seed를 작성해줘.
+Hidden Needs, Win Theme, 기술지원 Item을 작성해줘.
 ```
 
 ## 2. 제안서 Review GPT v3
@@ -131,15 +136,16 @@ Hidden Needs, Win Theme, 기술지원 Item, 발표 질문 Seed를 작성해줘.
 
 1. 모든 용역별 Project는 `chatgpt_project_template_v3.md` 내용을 Project Instructions에 붙여 넣습니다.
 2. 모든 분석 채팅은 필요한 원문 파일을 채팅에 직접 첨부합니다.
-3. 보고서 산출물은 Code Interpreter & Data Analysis로 `.docx` 파일을 직접 생성하는 것을 기본값으로 합니다.
-4. Word 산출물 파일명은 한글 없이 영문 소문자, 숫자, `_`만 사용하고 프로젝트별로 동일하게 맞춥니다.
+3. 보고서와 브리핑 산출물은 Code Interpreter & Data Analysis로 `.docx` 파일을 직접 생성하는 것을 기본값으로 합니다.
+4. 산출물 파일명은 한글 없이 영문 소문자, 숫자, `_`만 사용하고 프로젝트별로 동일하게 맞춥니다.
+   - `rfp_briefing_report.docx`
    - `rfp_strategy_design_report.docx`
    - `technical_support_request_draft.docx`
    - `technical_support_request_summary_draft.docx`
    - `proposal_review_report.docx`
    - `presentation_qa_report.docx`
    - `final_prm_check_report.docx`
-5. Canva는 표지, 요약 비주얼, 발표자료 보조 산출물에만 사용합니다.
+5. Canva는 표지, 요약 비주얼, 브리핑/발표자료 보조 산출물에만 사용합니다.
 6. `.docx` 생성이 불가능한 경우 Markdown fallback 산출물을 받고, 필요한 경우 로컬 변환기를 보조로 사용합니다.
 7. 생성된 결과물은 Project 소스에 다시 업로드합니다.
 8. 실제 심사 후 질문과 AI 예상 질문의 적중 여부를 기록합니다.
