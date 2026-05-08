@@ -200,8 +200,10 @@ OpenAI 공식 도움말에 따르면 ChatGPT Business 워크스페이스 데이�
 3. `Configure` 화면에서 이름, 설명, 지침, 대화 시작 문구를 입력합니다.
 4. `Instructions`에는 이 패키지의 v3 지침 파일 내용을 붙여 넣습니다.
 5. `Knowledge`에는 부서 공통 자료만 올립니다.
-6. Preview에서 테스트합니다.
-7. 저장 후 부서 워크스페이스에 공유합니다.
+6. `Code Interpreter & Data Analysis`를 켭니다. 이 기능은 Project 채팅에서 다운로드 가능한 `.docx` 보고서를 직접 생성하기 위한 필수 기능입니다.
+7. Canvas는 긴 초안 편집용 선택 기능으로 켜고, Canva는 표지/요약 비주얼/발표자료 보조 산출물이 필요할 때만 사용합니다.
+8. Preview에서 테스트합니다.
+9. 저장 후 부서 워크스페이스에 공유합니다.
 
 GPT 생성과 편집은 유료 구독 또는 워크스페이스 권한이 필요할 수 있습니다. 공식 도움말에 따르면 GPT는 ChatGPT 안에서 만들고, 테스트한 뒤 저장할 수 있습니다.
 참고: [GPTs in ChatGPT](https://help.openai.com/en/articles/8554407)
@@ -217,6 +219,16 @@ GPT의 `Knowledge`에는 부서 공통 자료만 넣습니다.
 - 표준 제안서 Review 리포트 양식
 - 표준 발표 Q&A 양식
 - 부서 공통 운영 지침
+
+GPT별 권장 Knowledge 업로드 파일:
+
+| GPT | Knowledge 업로드 파일 |
+|---|---|
+| 삼우CM RFP 분석 GPT | `260406 기술제안서 작성 절차서(매뉴얼) 개선방안 초안8.pdf` 또는 최신 매뉴얼, `output_templates/rfp_analysis_table.md`, `output_templates/kom_summary.md`, `output_templates/technical_support_request.md` |
+| 삼우CM 제안서 Review GPT | `260406 기술제안서 작성 절차서(매뉴얼) 개선방안 초안8.pdf` 또는 최신 매뉴얼, `output_templates/proposal_review_report.md`, `output_templates/rfp_analysis_table.md` |
+| 삼우CM 발표 Q&A GPT | `260406 기술제안서 작성 절차서(매뉴얼) 개선방안 초안8.pdf` 또는 최신 매뉴얼, `output_templates/presentation_qa_bank.md` |
+
+PowerPoint 원본이 더 최신이면 `260406 기술제안서 작성 절차서(매뉴얼) 개선방안 초안8.pptx`를 매뉴얼 보조 자료로 함께 올릴 수 있습니다.
 
 넣지 않는 것이 좋은 자료:
 
@@ -250,15 +262,15 @@ CM 용역 RFP, 과업지시서, 평가기준을 분석해 필수조건, 감점�
 Conversation starters:
 
 ```text
-업로드한 RFP와 평가기준의 OCR 품질을 먼저 확인하고, 분석 가능 여부를 판단해줘.
+이 채팅에 직접 첨부한 RFP, 과업지시서, 평가기준, 입찰공고문을 기준으로 먼저 OCR 품질을 확인하고, 분석 가능하면 RFP 제안전략설계서를 작성해줘. 평가기준/의사결정 구조, 발주자 문제 정의, Hidden Needs, 핵심 리스크, Must-win 전략과 Win Theme, 제안서 목차, 페이지 구성, 작성 가이드를 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 .docx 파일로 생성해줘. Word 결과물 파일명은 한글 없이 `rfp_strategy_design_report.docx`, `technical_support_request_draft.docx`, `technical_support_request_summary_draft.docx`로 생성해줘.
 ```
 
 ```text
-필수 제출조건, 감점요소, 평가항목, 배점, 인터뷰 관련 조건을 표로 정리해줘.
+이 채팅에 직접 첨부한 파일만 기준으로 자료 품질과 OCR 상태를 점검해줘. 실제로 읽을 수 없는 파일은 파일 확인 불가로 표시하고, RFP 제안전략 분석을 진행하지 말아줘.
 ```
 
 ```text
-RFP 과업내용을 제안서에 들어갈 개선전략으로 변환해줘.
+평가기준과 RFP를 기준으로 Hidden Needs, Must-win 전략, Win Theme, 기술지원 요청 Item, 발표 예상 질문 Seed를 한 번에 작성해줘.
 ```
 
 필수 산출물:
@@ -293,15 +305,15 @@ CM 기술제안서 초안을 RFP와 평가기준 기준으로 검토하고, 누�
 Conversation starters:
 
 ```text
-제안서 초안을 평가배점 대응 관점에서 검토해줘.
+이 채팅에 직접 첨부한 RFP, 평가기준, 과업지시서, 제안서 초안, RFP 제안전략설계서를 기준으로 제안서 통합 Review 보고서를 작성해줘. 평가배점 Coverage, 필수조건 누락, 감점 위험, Hidden Needs/Win Theme 반영 부족, 일반론 문장, 정량화 부족, P0/P1/P2/P3 수정사항을 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 `proposal_review_report.docx` 파일로 생성해줘.
 ```
 
 ```text
-RFP 필수조건과 과업내용 중 제안서에 빠진 항목을 찾아줘.
+이 채팅에 직접 첨부한 파일을 먼저 확인하고, 읽을 수 있는 파일만 기준으로 제안서 초안의 P0/P1 수정사항을 찾아줘.
 ```
 
 ```text
-일반론 문장을 프로젝트 특화 문장으로 고칠 수 있게 수정 예시를 작성해줘.
+제안서 초안에서 발표 때 공격받을 수 있는 약점을 찾아 발표 Q&A GPT로 넘길 질문 후보로 정리해줘.
 ```
 
 필수 산출물:
@@ -336,15 +348,15 @@ CM 제안서, RFP, 평가기준, 발표안을 기준으로 예상 질문, 압박
 Conversation starters:
 
 ```text
-평가항목별 발표 예상 질문을 40개 만들어줘.
+이 채팅에 직접 첨부한 평가기준, 최종 제안서, 발표자료, RFP 제안전략설계서, 제안서 Review 보고서를 기준으로 발표 Q&A 통합 보고서를 작성해줘. 평가항목별 예상질문, Hidden Needs 기반 압박질문, 3x3 키워드, 4-Step 답변, 꼬리질문을 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 `presentation_qa_report.docx` 파일로 생성해줘.
 ```
 
 ```text
-제안서의 약점에서 나올 수 있는 압박 질문과 답변 키워드를 만들어줘.
+이 채팅에 직접 첨부한 파일을 먼저 확인하고, 발표에서 공격받을 가능성이 큰 약점 기반 압박 질문 30개를 만들어줘.
 ```
 
 ```text
-각 질문별로 3x3 키워드와 4-Step 답변을 작성해줘.
+중요 질문 20개를 골라 3x3 키워드와 60초 4-Step 모범답안으로 정리해줘.
 ```
 
 필수 산출물:
@@ -1051,17 +1063,17 @@ P0는 제출 전 반드시 수정해야 하는 항목으로 표시해줘.
 
 ## 9. 결과물 저장 방식
 
-### 9.1 결과물은 자동으로 문서 파일이 되지 않는다
+### 9.1 최종 보고서는 Project 채팅에서 `.docx`로 생성한다
 
-ChatGPT가 답변을 생성하면 우선 채팅에 남습니다.
-그 결과가 자동으로 엑셀, 워드, PDF 파일로 저장되는 것은 아닙니다.
+표준 운영에서는 부서 공용 GPT가 Code Interpreter & Data Analysis를 사용해 Project 채팅 안에서 다운로드 가능한 `.docx` 보고서를 직접 생성합니다.
 
-따라서 PM은 중요한 결과물을 다음 중 하나로 관리해야 합니다.
+PM은 중요한 결과물을 다음 방식으로 관리합니다.
 
-1. ChatGPT의 응답을 Project 안에 저장 가능한 소스로 저장
-2. 응답을 복사해 Markdown, Word, Excel 양식에 붙여 넣기
-3. Project 안에서 후속 채팅이 참조하도록 산출물명을 명확히 남기기
-4. 필요한 경우 Codex로 Markdown/Excel 변환
+1. RFP 분석, 제안서 Review, 발표 Q&A는 `.docx` 파일로 생성해 다운로드합니다.
+2. 생성된 `.docx` 결과물은 Project 소스에 다시 업로드해 다음 단계에서 재사용합니다.
+3. 후속 채팅이 참조하도록 산출물 파일명을 고정합니다.
+4. `.docx` 생성이 불가능하면 Word에 붙여넣기 좋은 Markdown을 fallback 산출물로 받고, 필요한 경우 Codex 로컬 변환기를 보조로 사용합니다.
+5. Canva는 보고서 본문이 아니라 표지, Executive Summary 이미지, 발표자료용 요약 비주얼에만 사용합니다.
 
 ### 9.2 표준 산출물 이름
 
@@ -1169,7 +1181,8 @@ Codex나 Claude Code는 전 직원용 기본 도구로 두기보다 PM/관리자
 - PDF/PPT 텍스트 추출
 - 프로젝트 폴더 자동 생성
 - 파일명 정리
-- ChatGPT 산출물을 Markdown/Excel로 변환
+- ChatGPT의 `.docx` 생성이 실패했을 때 Markdown fallback 산출물을 Word로 변환
+- Excel/CSV 보조 변환
 - 표준 템플릿 생성
 - 반복 보고서 정리
 
@@ -1278,6 +1291,8 @@ GPT Knowledge에는 부서 공통 지식만 넣습니다.
 ChatGPT에서 표를 만든 뒤 복사해 Excel에 붙여 넣을 수 있습니다.
 반복적으로 Excel 변환이 필요하면 Codex 보조 도구로 Markdown 또는 CSV 변환 스크립트를 만들 수 있습니다.
 
+Word 보고서는 기본적으로 Project 채팅에서 Code Interpreter & Data Analysis로 `.docx` 파일을 직접 생성합니다. 이 기능이 사용할 수 없는 환경에서는 Markdown fallback 산출물을 받은 뒤 로컬 변환기를 보조로 사용할 수 있습니다.
+
 ### Q9. AI가 RFP를 잘못 읽으면 어떻게 하나요?
 
 먼저 `00_자료품질_OCR_확인`을 합니다.
@@ -1305,6 +1320,7 @@ AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 - [ ] ChatGPT Business 워크스페이스 준비
 - [ ] GPT 생성 권한 확인
 - [ ] Project 생성 및 공유 권한 확인
+- [ ] GPT 3개에서 `Code Interpreter & Data Analysis` ON 확인
 - [ ] `삼우CM RFP 분석 GPT` 생성
 - [ ] `삼우CM 제안서 Review GPT` 생성
 - [ ] `삼우CM 발표 Q&A GPT` 생성
@@ -1324,7 +1340,7 @@ AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 - [ ] `00_자료품질_OCR_확인` 실행
 - [ ] `01_RFP_필수조건_감점요소` 실행
 - [ ] `02_평가배점_대응전략` 실행
-- [ ] KOM 전 요약자료 생성
+- [ ] KOM 전 요약자료와 RFP 제안전략설계서 `.docx` 생성
 
 ### 작성자 체크리스트
 
@@ -1347,7 +1363,7 @@ AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 
 ---
 
-## 15. 권장 운영 원칙 10개
+## 15. 권장 운영 원칙 11개
 
 1. 프로젝트마다 Project를 하나 만든다.
 2. 부서 GPT는 3개만 운영하고, 프로젝트마다 새로 만들지 않는다.
@@ -1357,8 +1373,9 @@ AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 6. 발표 Q&A는 제안서 장점보다 약점과 평가위원 질문 가능성에서 만든다.
 7. AI 답변은 원문 근거와 함께 받는다.
 8. 불확실한 항목은 `확인 필요`로 남긴다.
-9. 최종 제출 전에는 사람이 RFP 원문과 대조한다.
-10. 심사 후 실제 질문을 기록해 다음 프로젝트에 반영한다.
+9. 최종 보고서는 Project 채팅에서 `.docx`로 생성하고, 결과물을 Project 소스에 다시 업로드한다.
+10. 최종 제출 전에는 사람이 RFP 원문과 대조한다.
+11. 심사 후 실제 질문을 기록해 다음 프로젝트에 반영한다.
 
 ---
 
@@ -1366,8 +1383,10 @@ AI가 확신하지 못하는 항목은 `확인 필요`로 남겨야 합니다.
 
 - [GPTs in ChatGPT](https://help.openai.com/en/articles/8554407)
 - [Projects in ChatGPT](https://help.openai.com/en/articles/10169521)
+- [Data analysis with ChatGPT](https://help.openai.com/en/articles/8437071)
 - [Managing data, sharing, and privacy in ChatGPT Business](https://help.openai.com/en/articles/8798634)
 - [Managing GPT access in Enterprise and Edu workspaces](https://help.openai.com/en/articles/8555535)
+- [Canva app for ChatGPT](https://openai.com/business/apps/canva/)
 
 ---
 

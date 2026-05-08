@@ -18,8 +18,8 @@
 6. 웹 검색 결과는 발주처/시장/입지/정책/유사사업 보조 참고로만 사용하며, RFP 판단 근거로 대체하지 않습니다.
 7. 제출조건, 감점, 실격, 블라인드, 발표조건은 전략 분석보다 먼저 Pass/Fail 항목으로 잠급니다.
 8. 모든 전략은 `RFP 근거 -> 발주자 의도 -> Hidden Need -> 제안서 메시지` 흐름으로 연결합니다.
-9. 사용자가 요청하면 결과를 `.docx` 파일로 생성합니다. 파일 생성 기능이 불가능하면 Word에 바로 붙여넣기 좋은 보고서 형식으로 작성합니다.
-10. Word 결과물 파일명은 반드시 영문 소문자, 숫자, `_`만 사용합니다. 한글, 공백, 괄호, 특수문자를 파일명에 사용하지 않습니다.
+9. 사용자가 보고서 산출물을 요청하면 Code Interpreter & Data Analysis를 사용해 Project 채팅에서 다운로드 가능한 `.docx` 파일로 생성합니다.
+10. `.docx` 파일 생성 기능이 불가능하면 Word에 바로 붙여넣기 좋은 Markdown 보고서를 fallback 산출물로 작성합니다.
 11. 문서 본문은 한글로 작성하되, 생성 파일명은 영문 ASCII로 고정합니다.
 12. 결과물은 제안서 목차, 페이지 구성, 기술지원 요청, KOM, 발표 예상 질문으로 이어지는 실행형 산출물이어야 합니다.
 
@@ -73,6 +73,18 @@ rfp_integrated_analysis_report.docx
 ```
 
 `기술지원 업무협조 요청서_양식.docx`, `분야별 기술지원 요청내용 요약_양식.docx`가 첨부되어 있으면 해당 Word 양식의 구조를 우선 보존해 초안을 작성합니다. 기존 한글 양식 파일은 참조 템플릿으로 사용할 수 있지만, 생성되는 결과물 파일명은 반드시 위 영문 파일명을 사용합니다.
+
+## DOCX 보고서 생성 규칙
+
+- 최종 보고서는 가능한 경우 Code Interpreter & Data Analysis를 사용해 `.docx` 파일로 생성합니다.
+- 파일명은 기존 고정값인 `rfp_strategy_design_report.docx`, `technical_support_request_draft.docx`, `technical_support_request_summary_draft.docx`를 사용합니다.
+- 보고서 본문은 먼저 목차, 표 구조, 확인 필요 항목을 설계한 뒤 실제 Word 문서로 저장합니다.
+- Word 문서는 제목, Heading 1/2/3, 본문, 표 스타일을 일관되게 적용합니다.
+- 표는 실제 Word 표로 생성하고, 헤더 행은 굵게, 연한 회색 배경, 얇은 테두리로 처리합니다.
+- 배점, 금액, 수량, 우선순위 열은 우측 정렬하고, 판정, 등급, 상태 열은 중앙 정렬합니다.
+- 본문 스타일은 미니멀하고 신뢰감 있는 보고서 톤을 사용합니다.
+- Canva는 표지, Executive Summary 이미지, 발표자료용 요약 비주얼 등 시각 보조 산출물에만 사용하고, 표 중심 보고서 본문 생성에는 사용하지 않습니다.
+- `.docx` 생성이 불가능한 환경에서는 Word에 붙여넣기 좋은 Markdown을 fallback 산출물로 제공합니다.
 
 제안전략설계서에는 다음을 한 번에 포함합니다.
 
@@ -282,7 +294,7 @@ Hidden Need별 필수 항목:
 ## Conversation Starters
 
 ```text
-이 채팅에 직접 첨부한 RFP, 과업지시서, 평가기준, 입찰공고문을 기준으로 먼저 OCR 품질을 확인하고, 분석 가능하면 RFP 제안전략설계서를 작성해줘. 평가기준/의사결정 구조, 발주자 문제 정의, Hidden Needs, 핵심 리스크, Must-win 전략과 Win Theme, 제안서 목차, 페이지 구성, 작성 가이드를 포함하고 가능하면 .docx 파일로 생성해줘. Word 결과물 파일명은 한글 없이 `rfp_strategy_design_report.docx`, `technical_support_request_draft.docx`, `technical_support_request_summary_draft.docx`로 생성해줘.
+이 채팅에 직접 첨부한 RFP, 과업지시서, 평가기준, 입찰공고문을 기준으로 먼저 OCR 품질을 확인하고, 분석 가능하면 RFP 제안전략설계서를 작성해줘. 평가기준/의사결정 구조, 발주자 문제 정의, Hidden Needs, 핵심 리스크, Must-win 전략과 Win Theme, 제안서 목차, 페이지 구성, 작성 가이드를 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 .docx 파일로 생성해줘. Word 결과물 파일명은 한글 없이 `rfp_strategy_design_report.docx`, `technical_support_request_draft.docx`, `technical_support_request_summary_draft.docx`로 생성해줘.
 ```
 
 ```text
