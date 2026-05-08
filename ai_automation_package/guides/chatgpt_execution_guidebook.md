@@ -262,15 +262,15 @@ CM 용역 RFP, 과업지시서, 평가기준을 분석해 필수조건, 감점�
 Conversation starters:
 
 ```text
-이 채팅에 직접 첨부한 RFP, 과업지시서, 평가기준, 입찰공고문을 기준으로 먼저 OCR 품질을 확인하고, 분석 가능하면 RFP 제안전략설계서를 작성해줘. 평가기준/의사결정 구조, 발주자 문제 정의, Hidden Needs, 핵심 리스크, Must-win 전략과 Win Theme, 제안서 목차, 페이지 구성, 작성 가이드를 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 .docx 파일로 생성해줘. Word 결과물 파일명은 한글 없이 `rfp_strategy_design_report.docx`, `technical_support_request_draft.docx`, `technical_support_request_summary_draft.docx`로 생성해줘.
+첨부 파일을 점검하고 RFP 제안전략설계서와 기술지원 초안 2종을 `.docx`로 생성해줘.
 ```
 
 ```text
-이 채팅에 직접 첨부한 파일만 기준으로 자료 품질과 OCR 상태를 점검해줘. 실제로 읽을 수 없는 파일은 파일 확인 불가로 표시하고, RFP 제안전략 분석을 진행하지 말아줘.
+첨부 파일의 OCR/자료 품질만 점검해줘.
 ```
 
 ```text
-평가기준과 RFP를 기준으로 Hidden Needs, Must-win 전략, Win Theme, 기술지원 요청 Item, 발표 예상 질문 Seed를 한 번에 작성해줘.
+Hidden Needs, Win Theme, 기술지원 Item, 발표 질문 Seed를 작성해줘.
 ```
 
 필수 산출물:
@@ -305,15 +305,15 @@ CM 기술제안서 초안을 RFP와 평가기준 기준으로 검토하고, 누�
 Conversation starters:
 
 ```text
-이 채팅에 직접 첨부한 RFP, 평가기준, 과업지시서, 제안서 초안, RFP 제안전략설계서를 기준으로 제안서 통합 Review 보고서를 작성해줘. 평가배점 Coverage, 필수조건 누락, 감점 위험, Hidden Needs/Win Theme 반영 부족, 일반론 문장, 정량화 부족, P0/P1/P2/P3 수정사항을 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 `proposal_review_report.docx` 파일로 생성해줘.
+첨부 자료 기준으로 제안서 통합 Review 보고서를 `.docx`로 생성해줘.
 ```
 
 ```text
-이 채팅에 직접 첨부한 파일을 먼저 확인하고, 읽을 수 있는 파일만 기준으로 제안서 초안의 P0/P1 수정사항을 찾아줘.
+첨부 파일 기준으로 P0/P1 수정사항만 찾아줘.
 ```
 
 ```text
-제안서 초안에서 발표 때 공격받을 수 있는 약점을 찾아 발표 Q&A GPT로 넘길 질문 후보로 정리해줘.
+발표 Q&A로 넘길 제안서 약점 질문 후보를 정리해줘.
 ```
 
 필수 산출물:
@@ -348,15 +348,15 @@ CM 제안서, RFP, 평가기준, 발표안을 기준으로 예상 질문, 압박
 Conversation starters:
 
 ```text
-이 채팅에 직접 첨부한 평가기준, 최종 제안서, 발표자료, RFP 제안전략설계서, 제안서 Review 보고서를 기준으로 발표 Q&A 통합 보고서를 작성해줘. 평가항목별 예상질문, Hidden Needs 기반 압박질문, 3x3 키워드, 4-Step 답변, 꼬리질문을 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 `presentation_qa_report.docx` 파일로 생성해줘.
+첨부 자료 기준으로 발표 Q&A 통합 보고서를 `.docx`로 생성해줘.
 ```
 
 ```text
-이 채팅에 직접 첨부한 파일을 먼저 확인하고, 발표에서 공격받을 가능성이 큰 약점 기반 압박 질문 30개를 만들어줘.
+약점 기반 압박 질문 30개를 만들어줘.
 ```
 
 ```text
-중요 질문 20개를 골라 3x3 키워드와 60초 4-Step 모범답안으로 정리해줘.
+중요 질문 20개를 3x3 키워드와 60초 답변으로 정리해줘.
 ```
 
 필수 산출물:

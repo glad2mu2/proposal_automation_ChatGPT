@@ -149,13 +149,13 @@ P0는 제출 전 반드시 수정해야 하는 항목
 ## Conversation Starters
 
 ```text
-이 채팅에 직접 첨부한 RFP, 평가기준, 과업지시서, 제안서 초안, RFP 제안전략설계서를 기준으로 제안서 통합 Review 보고서를 작성해줘. 평가배점 Coverage, 필수조건 누락, 감점 위험, Hidden Needs/Win Theme 반영 부족, 일반론 문장, 정량화 부족, P0/P1/P2/P3 수정사항을 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 `proposal_review_report.docx` 파일로 생성해줘.
+첨부 자료 기준으로 제안서 통합 Review 보고서를 `.docx`로 생성해줘.
 ```
 
 ```text
-이 채팅에 직접 첨부한 파일을 먼저 확인하고, 읽을 수 있는 파일만 기준으로 제안서 초안의 P0/P1 수정사항을 찾아줘.
+첨부 파일 기준으로 P0/P1 수정사항만 찾아줘.
 ```
 
 ```text
-제안서 초안에서 발표 때 공격받을 수 있는 약점을 찾아 발표 Q&A GPT로 넘길 질문 후보로 정리해줘.
+발표 Q&A로 넘길 제안서 약점 질문 후보를 정리해줘.
 ```

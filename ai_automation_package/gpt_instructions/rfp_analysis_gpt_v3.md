@@ -294,13 +294,13 @@ Hidden Need별 필수 항목:
 ## Conversation Starters
 
 ```text
-이 채팅에 직접 첨부한 RFP, 과업지시서, 평가기준, 입찰공고문을 기준으로 먼저 OCR 품질을 확인하고, 분석 가능하면 RFP 제안전략설계서를 작성해줘. 평가기준/의사결정 구조, 발주자 문제 정의, Hidden Needs, 핵심 리스크, Must-win 전략과 Win Theme, 제안서 목차, 페이지 구성, 작성 가이드를 포함하고 Code Interpreter & Data Analysis를 사용해 다운로드 가능한 .docx 파일로 생성해줘. Word 결과물 파일명은 한글 없이 `rfp_strategy_design_report.docx`, `technical_support_request_draft.docx`, `technical_support_request_summary_draft.docx`로 생성해줘.
+첨부 파일을 점검하고 RFP 제안전략설계서와 기술지원 초안 2종을 `.docx`로 생성해줘.
 ```
 
 ```text
-이 채팅에 직접 첨부한 파일만 기준으로 자료 품질과 OCR 상태를 점검해줘. 실제로 읽을 수 없는 파일은 파일 확인 불가로 표시하고, RFP 제안전략 분석을 진행하지 말아줘.
+첨부 파일의 OCR/자료 품질만 점검해줘.
 ```
 
 ```text
-평가기준과 RFP를 기준으로 Hidden Needs, Must-win 전략, Win Theme, 기술지원 요청 Item, 발표 예상 질문 Seed를 한 번에 작성해줘.
+Hidden Needs, Win Theme, 기술지원 Item, 발표 질문 Seed를 작성해줘.
 ```
